@@ -1,0 +1,13 @@
+note over browser:
+the browser starts executing js code
+which adds new note and redraws screen.
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+the server appends Request Payload
+{content: "Hello Iloilo", date: "2021-03-25T13:32:39.726Z"}
+end note
+
+server-->browser: {"message":"note created"}
