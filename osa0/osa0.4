@@ -1,0 +1,27 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+the server appends Form Data 
+note: Http Post sends Data
+end note
+
+server-->browser: HTML redirection 
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+the browser starts executing js code
+which requests JSON data from the server
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{content: "HTML fosd", date: "2021-03-25T11:49:06.771Z"}, ...]
+
+note over browser:
+the browser executes the event handler
+which renders the notes on the screen
+end note
